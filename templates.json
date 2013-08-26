@@ -1,0 +1,119 @@
+{
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.1",
+    "basePath": "https://mandrillapp.com/api/1.0/",
+    "resourcePath": "/templates",
+    "apis": [
+        {
+            "path": "/templates/list.json",
+            "description": "Templates resources",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "Return available templates",
+                    "responseClass": "Template",
+                    "nickname": "listTemplates"
+                }
+            ]
+        }
+    ],
+    "models": {
+        "Template": {
+            "id": "Template",
+            "type": "object",
+            "properties":{
+                "slug": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/slug",
+                    "required":true
+                },
+                "name": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/name",
+                    "required":true
+                },
+                "code": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/code",
+                    "required":false
+                },
+                "subject": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/subject",
+                    "required":false
+                },
+                "created_at": {
+                    "title" : "Created At",
+                    "type":"string",
+                    "id": "http://jsonschema.net/created_at",
+                    "required":false
+                },
+                "from_email": {
+                    "title" : "From Email",
+                    "type":"string",
+                    "id": "http://jsonschema.net/from_email",
+                    "required":false
+                },
+                "from_name": {
+                    "title" : "From Name",
+                    "type":"string",
+                    "id": "http://jsonschema.net/from_name",
+                    "required":false
+                },
+                "publish_code": {
+                    "title" : "Publish Code",
+                    "type":"string",
+                    "id": "http://jsonschema.net/publish_code",
+                    "required":false
+                },
+                "publish_from_email": {
+                    "title" : "Publish From Email",
+                    "type":"string",
+                    "id": "http://jsonschema.net/publish_from_email",
+                    "required":false
+                },
+                "publish_from_name": {
+                    "title" : "Publish From Email",
+                    "type":"string",
+                    "id": "http://jsonschema.net/publish_from_name",
+                    "required":false
+                },
+                "publish_name": {
+                    "title" : "Publish Name",
+                    "type":"string",
+                    "id": "http://jsonschema.net/publish_name",
+                    "required":false
+                },
+                "publish_subject": {
+                    "title" : "Publish Subject",
+                    "type":"string",
+                    "id": "http://jsonschema.net/publish_subject",
+                    "required":false
+                },
+                "publish_text": {
+                    "title" : "Publish Text",
+                    "type":"string",
+                    "id": "http://jsonschema.net/publish_text",
+                    "required":false
+                },
+                "published_at": {
+                    "title" : "Published At",
+                    "type":"string",
+                    "id": "http://jsonschema.net/published_at",
+                    "required":false
+                },
+                "text": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/text",
+                    "required":false
+                },
+                "updated_at": {
+                    "title" : "Updated At",
+                    "type":"string",
+                    "id": "http://jsonschema.net/updated_at",
+                    "required":false
+                }
+            }
+        }
+    }
+}

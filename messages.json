@@ -1,0 +1,74 @@
+{
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.1",
+    "basePath": "https://mandrillapp.com/api/1.0/",
+    "resourcePath": "/messages",
+    "apis": [
+        {
+            "path": "/messages/send-template.json",
+            "description": "Messages resources",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Send a message using a template",
+                    "responseClass": "void",
+                    "nickname": "sendTemplate",
+                    "parameters": [
+                        {
+                            "name": "template_name",
+                            "description": "Template",
+                            "paramType": "body",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "selectModel": {
+                                "operation": "listTemplates",
+                                "keyProperty" : "name",
+                                "valueProperty" : "name"
+                            },
+                            "allowableValues":{
+                                "valueType":"OPERATION",
+                                "nickname": "listTemplates",
+                                "keyProperty" : "name",
+                                "valueProperty" : "name"
+                            }
+                        },
+                        {
+                            "name": "message",
+                            "description": "Message",
+                            "paramType": "body",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "from_name",
+                            "description": "From Name",
+                            "paramType": "body",
+                            "required": false,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+        "Message": {
+            "id": "Message",
+            "type": "object",
+            "properties":{
+                "subject": {
+                    "type":"string",
+                    "required":true
+                },
+                "from_email": {
+                    "title": "From Email",
+                    "type":"string",
+                    "required":true
+                }
+            }
+        }
+    }
+}

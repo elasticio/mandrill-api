@@ -1,0 +1,16 @@
+{
+    "apiVersion": "1.0",
+    "description": "Mandrill - a new way for apps to send transactional email.",
+    "swaggerVersion": "1.1",
+    "basePath": "https://mandrillapp.com/api/1.0/",
+    "apis": [
+        {
+            "path": "/messages",
+            "description": "Messages resources"
+        },
+        {
+            "path": "/templates",
+            "description": "Template resources"
+        }
+    ]
+}
