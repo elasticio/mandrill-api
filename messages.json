@@ -25,12 +25,6 @@
                                 "operation": "listTemplates",
                                 "keyProperty" : "name",
                                 "valueProperty" : "name"
-                            },
-                            "allowableValues":{
-                                "valueType":"OPERATION",
-                                "nickname": "listTemplates",
-                                "keyProperty" : "name",
-                                "valueProperty" : "name"
                             }
                         },
                         {
