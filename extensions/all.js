@@ -1,6 +1,8 @@
-exports.preProcess = function (msg, cfg, snapshot, cb) {
+exports.preRequest = function (options, cfg) {
 
-    msg.body.key = cfg.apiKey;
+    var body = options.body;
 
-    cb();
+    if (body) {
+        body.key = cfg.apiKey;
+    }
 };
