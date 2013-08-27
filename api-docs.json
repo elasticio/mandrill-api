@@ -14,7 +14,7 @@
         }
     ],
     "authentication": {
-        "type": "apiKey",
+        "type": "custom",
 
         "parameters": [
             {
