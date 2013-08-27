@@ -70,6 +70,16 @@
                     "title": "From Email",
                     "type":"string",
                     "required":true
+                },
+                "to": {
+                    "type": "array",
+                    "properties" : {
+                        "email" : {
+                            "title": "To Email",
+                            "type":"string",
+                            "required":true
+                        }
+                    }
                 }
             }
         }
