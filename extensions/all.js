@@ -1,8 +1,12 @@
 exports.preRequest = function (options, cfg) {
 
-    if (!options.body) {
-        options.body = {};
+    var body = {};
+
+    if (options.body) {
+        body = JSON.parse(options.body);
     }
 
-    options.body.key = cfg.apiKey;
+    body.key = cfg.apiKey;
+
+    options.body =  JSON.stringify(body);
 };
