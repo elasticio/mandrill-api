@@ -28,12 +28,21 @@
                             }
                         },
                         {
+                            "name": "template_content",
+                            "description": "Template Content",
+                            "paramType": "body",
+                            "required": false,
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "defaultValue": []
+                        },
+                        {
                             "name": "message",
                             "description": "Message",
                             "paramType": "body",
                             "required": true,
                             "allowMultiple": false,
-                            "dataType": "string"
+                            "dataType": "Message"
                         },
                         {
                             "name": "from_name",
