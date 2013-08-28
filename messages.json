@@ -72,7 +72,7 @@
                     "required":true
                 },
                 "to": {
-                    "type": "object",
+                    "type": "array",
                     "properties" : {
                         "email" : {
                             "title": "To Email",
