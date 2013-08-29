@@ -12,7 +12,7 @@
             "path": "/templates",
             "description": "Template resources"
         }
-    ]
+    ],
     "authorizations" : {
         "apiKey" : {
             "type" : "apiKey",
