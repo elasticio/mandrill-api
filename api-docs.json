@@ -25,5 +25,12 @@
                 "dataType": "string"
             }
         ]
+    },
+    "authorizations" : {
+        "apiKey" : {
+            "type" : "apiKey",
+            "passAs" : "body",
+            "name" : "key"
+        }
     }
 }
