@@ -12,20 +12,7 @@
             "path": "/templates",
             "description": "Template resources"
         }
-    ],
-    "authentication": {
-        "type": "custom",
-
-        "parameters": [
-            {
-                "name": "apiKey",
-                "description": "API Key",
-                "paramType": "custom",
-                "required": true,
-                "dataType": "string"
-            }
-        ]
-    },
+    ]
     "authorizations" : {
         "apiKey" : {
             "type" : "apiKey",
