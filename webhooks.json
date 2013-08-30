@@ -45,7 +45,7 @@
                             "paramType": "body",
                             "required": true,
                             "allowMultiple": false,
-                            "dataType": "string",
+                            "dataType": "EventArray",
                             "allowableValues":{
                                 "valueType":"LIST",
                                 "values":[
@@ -90,6 +90,15 @@
         }
     ],
     "models": {
+        "EventArray": {
+            "id" : "EventArray",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
         "AddWebhookResponse": {
             "id": "AddWebhookResponse",
             "type": "object",
