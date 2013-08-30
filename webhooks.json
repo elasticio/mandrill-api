@@ -1,0 +1,110 @@
+{
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.1",
+    "basePath": "https://mandrillapp.com/api/1.0/",
+    "resourcePath": "/webhooks",
+    "apis": [
+        {
+            "path": "{{WEBHOOK_URI}}",
+            "description": "Webhook resources",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Register Webhook",
+                    "responseClass": "dynamic",
+                    "nickname": "newWebhook"
+                }
+            ]
+        },
+        {
+            "path": "/webhooks/add.json",
+            "description": "Webhook resources",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Register Webhook",
+                    "responseClass": "WebhookResponse",
+                    "nickname": "registerWebhook",
+                    "subscribe": "newWebhook",
+                    "snapshot" : {
+                        "id": "id"
+                    },
+                    "parameters": [
+                        {
+                            "name": "url",
+                            "description": "Webhook URL",
+                            "paramType": "body",
+                            "required": false,
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "viewClass": "HiddenFieldView"
+                        },
+                        {
+                            "name": "events",
+                            "description": "Events",
+                            "paramType": "body",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "allowableValues":{
+                                "valueType":"LIST",
+                                "values":[
+                                    "send",
+                                    "open",
+                                    "click",
+                                    "spam",
+                                    "reject",
+                                    "unsub",
+                                    "deferral",
+                                    "hard_bounce",
+                                    "soft_bounce"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/webhooks/delete.json",
+            "description": "Webhook resources",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Remove Webhook",
+                    "responseClass": "void",
+                    "nickname": "removeWebhook",
+                    "unsubscribe": "newWebhook",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "Webhook ID",
+                            "paramType": "body",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+        "WebhookResponse": {
+            "id": "WebhookResponse",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "title": "Id",
+                    "type": "string",
+                    "required":true
+                },
+                "url": {
+                    "title": "URL",
+                    "type": "string",
+                    "required":true
+                }
+            }
+        }
+    }
+}
