@@ -11,7 +11,7 @@
                 {
                     "httpMethod": "POST",
                     "summary": "Register Webhook",
-                    "responseClass": "dynamic",
+                    "responseClass": "WebhookPayload",
                     "nickname": "newWebhook"
                 }
             ]
@@ -23,7 +23,7 @@
                 {
                     "httpMethod": "POST",
                     "summary": "Register Webhook",
-                    "responseClass": "WebhookResponse",
+                    "responseClass": "AddWebhookResponse",
                     "nickname": "registerWebhook",
                     "subscribe": "newWebhook",
                     "snapshot" : {
@@ -90,8 +90,8 @@
         }
     ],
     "models": {
-        "WebhookResponse": {
-            "id": "WebhookResponse",
+        "AddWebhookResponse": {
+            "id": "AddWebhookResponse",
             "type": "object",
             "properties": {
                 "id": {
@@ -103,6 +103,38 @@
                     "title": "URL",
                     "type": "string",
                     "required":true
+                }
+            }
+        },
+        "WebhookPayload": {
+            "id": "WebhookPayload",
+            "type": "object",
+            "properties": {
+                "event": {
+                    "title": "Event",
+                    "type": "string",
+                    "required":true
+                },
+                "ts": {
+                    "title": "Timestamp",
+                    "type": "string",
+                    "required":true
+                },
+                "msg": {
+                    "title": "Message",
+                    "type": "object",
+                    "properties": {
+                        "subject": {
+                            "title": "Subject",
+                            "type": "string",
+                            "required":true
+                        },
+                        "email": {
+                            "title": "Email",
+                            "type": "string",
+                            "required":true
+                        }
+                    }
                 }
             }
         }
