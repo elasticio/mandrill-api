@@ -110,29 +110,35 @@
             "id": "WebhookPayload",
             "type": "object",
             "properties": {
-                "event": {
-                    "title": "Event",
-                    "type": "string",
-                    "required":true
-                },
-                "ts": {
-                    "title": "Timestamp",
-                    "type": "string",
-                    "required":true
-                },
-                "msg": {
-                    "title": "Message",
-                    "type": "object",
+                "mandrill_events": {
+                    "type": "array",
+                    "required":true,
                     "properties": {
-                        "subject": {
-                            "title": "Subject",
+                        "event": {
+                            "title": "Event",
                             "type": "string",
                             "required":true
                         },
-                        "email": {
-                            "title": "Email",
+                        "ts": {
+                            "title": "Timestamp",
                             "type": "string",
                             "required":true
+                        },
+                        "msg": {
+                            "title": "Message",
+                            "type": "object",
+                            "properties": {
+                                "subject": {
+                                    "title": "Subject",
+                                    "type": "string",
+                                    "required":true
+                                },
+                                "email": {
+                                    "title": "Email",
+                                    "type": "string",
+                                    "required":true
+                                }
+                            }
                         }
                     }
                 }
