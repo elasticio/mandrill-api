@@ -80,6 +80,11 @@
                             "required":true
                         }
                     }
+                },
+                "global_merge_vars": {
+                    "title": "Global Merge Vars",
+                    "type":"string",
+                    "required":false
                 }
             }
         }

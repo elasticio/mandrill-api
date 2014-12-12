@@ -11,13 +11,19 @@ function preRequest(options, cfg) {
 
     options.body = JSON.parse(options.body);
 
-    var template_content = options.body.template_content;
+    parsePropertyToJSON(options.body, 'template_content');
 
-    if (typeof template_content === 'string' && template_content !== '') {
-        console.log("Parsing template content to object");
-
-        options.body.template_content = JSON.parse(template_content);
-    }
+    parsePropertyToJSON(options.body.message, 'global_merge_vars');
 
     options.json = true;
+}
+
+function parsePropertyToJSON(obj, propertyName) {
+    var value = obj[propertyName];
+
+    if (typeof value === 'string' && value !== '') {
+        console.log("Parsing " + propertyName + " to object");
+
+        obj[propertyName] = JSON.parse(value);
+    }
 }
