@@ -85,6 +85,16 @@
                     "title": "Global Merge Vars",
                     "type":"string",
                     "required":false
+                },
+                "attachments": {
+                    "title": "Attachments",
+                    "type":"string",
+                    "required":false
+                },
+                "images": {
+                    "title": "Images",
+                    "type":"string",
+                    "required":false
                 }
             }
         }
