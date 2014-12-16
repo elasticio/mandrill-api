@@ -13,7 +13,9 @@ function preRequest(options, cfg) {
 
     parsePropertyToJSON(options.body, 'template_content');
 
+    parsePropertyToJSON(options.body.message, 'attachments');
     parsePropertyToJSON(options.body.message, 'global_merge_vars');
+    parsePropertyToJSON(options.body.message, 'images');
 
     options.json = true;
 }
